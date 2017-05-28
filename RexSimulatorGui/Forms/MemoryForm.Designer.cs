@@ -44,6 +44,8 @@
             this.earToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rbaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ptableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox_GoToAddress = new System.Windows.Forms.ToolStripTextBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,12 +55,14 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.memoryListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memoryListView.FullRowSelect = true;
             this.memoryListView.Location = new System.Drawing.Point(0, 0);
+            this.memoryListView.Margin = new System.Windows.Forms.Padding(4);
             this.memoryListView.Name = "memoryListView";
-            this.memoryListView.Size = new System.Drawing.Size(547, 511);
+            this.memoryListView.Size = new System.Drawing.Size(729, 629);
             this.memoryListView.TabIndex = 0;
             this.memoryListView.UseCompatibleStateImageBehavior = false;
             this.memoryListView.View = System.Windows.Forms.View.Details;
@@ -84,7 +88,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Disassembly";
-            this.columnHeader4.Width = 250;
+            this.columnHeader4.Width = 200;
             // 
             // updateTimer
             // 
@@ -92,11 +96,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.goToToolStripMenuItem});
+            this.goToToolStripMenuItem,
+            this.toolStripTextBox_GoToAddress});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(547, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(729, 31);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -112,66 +119,78 @@
             this.rbaseToolStripMenuItem,
             this.ptableToolStripMenuItem});
             this.goToToolStripMenuItem.Name = "goToToolStripMenuItem";
-            this.goToToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.goToToolStripMenuItem.Size = new System.Drawing.Size(60, 27);
             this.goToToolStripMenuItem.Text = "Go To";
             // 
             // pcToolStripMenuItem
             // 
             this.pcToolStripMenuItem.Name = "pcToolStripMenuItem";
-            this.pcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pcToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.pcToolStripMenuItem.Text = "$pc";
             this.pcToolStripMenuItem.Click += new System.EventHandler(this.pcToolStripMenuItem_Click);
             // 
             // spToolStripMenuItem
             // 
             this.spToolStripMenuItem.Name = "spToolStripMenuItem";
-            this.spToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.spToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.spToolStripMenuItem.Text = "$sp";
             this.spToolStripMenuItem.Click += new System.EventHandler(this.spToolStripMenuItem_Click);
             // 
             // raToolStripMenuItem
             // 
             this.raToolStripMenuItem.Name = "raToolStripMenuItem";
-            this.raToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.raToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.raToolStripMenuItem.Text = "$ra";
             this.raToolStripMenuItem.Click += new System.EventHandler(this.raToolStripMenuItem_Click);
             // 
             // evecToolStripMenuItem
             // 
             this.evecToolStripMenuItem.Name = "evecToolStripMenuItem";
-            this.evecToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.evecToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.evecToolStripMenuItem.Text = "$evec";
             this.evecToolStripMenuItem.Click += new System.EventHandler(this.evecToolStripMenuItem_Click);
             // 
             // earToolStripMenuItem
             // 
             this.earToolStripMenuItem.Name = "earToolStripMenuItem";
-            this.earToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.earToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.earToolStripMenuItem.Text = "$ear";
             this.earToolStripMenuItem.Click += new System.EventHandler(this.earToolStripMenuItem_Click);
             // 
             // rbaseToolStripMenuItem
             // 
             this.rbaseToolStripMenuItem.Name = "rbaseToolStripMenuItem";
-            this.rbaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rbaseToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.rbaseToolStripMenuItem.Text = "$rbase";
             this.rbaseToolStripMenuItem.Click += new System.EventHandler(this.rbaseToolStripMenuItem_Click);
             // 
             // ptableToolStripMenuItem
             // 
             this.ptableToolStripMenuItem.Name = "ptableToolStripMenuItem";
-            this.ptableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ptableToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.ptableToolStripMenuItem.Text = "$ptable";
             this.ptableToolStripMenuItem.Click += new System.EventHandler(this.ptableToolStripMenuItem_Click);
             // 
+            // toolStripTextBox_GoToAddress
+            // 
+            this.toolStripTextBox_GoToAddress.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBox_GoToAddress.Name = "toolStripTextBox_GoToAddress";
+            this.toolStripTextBox_GoToAddress.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox_GoToAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox_GoToAddress_KeyPress);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ASCII";
+            // 
             // MemoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 511);
+            this.ClientSize = new System.Drawing.Size(729, 629);
             this.Controls.Add(this.memoryListView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemoryForm";
             this.Text = "MemoryForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MemoryForm_FormClosing);
@@ -199,5 +218,7 @@
         private System.Windows.Forms.ToolStripMenuItem earToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rbaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ptableToolStripMenuItem;
+        public System.Windows.Forms.ToolStripTextBox toolStripTextBox_GoToAddress;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

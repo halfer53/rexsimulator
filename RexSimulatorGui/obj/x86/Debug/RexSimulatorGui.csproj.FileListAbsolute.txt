@@ -14,3 +14,7 @@ C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\obj\x86\Debug\RexSi
 C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\obj\x86\Debug\RexSimulatorGui.csproj.GenerateResource.Cache
 C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\obj\x86\Debug\RexSimulatorGui.exe
 C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\obj\x86\Debug\RexSimulatorGui.pdb
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\bin\Debug\RexSimulatorGui.exe.manifest
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\bin\Debug\RexSimulatorGui.application
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\obj\x86\Debug\RexSimulatorGui.exe.manifest
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulatorGui\obj\x86\Debug\RexSimulatorGui.application

@@ -57,6 +57,7 @@ namespace RexSimulator.Hardware.Wramp
                 uint bitOffset = (value >> 10) & 0x1f;
                 if ((protectionWord & (0x80000000 >> (int)bitOffset)) == 0)
                 {
+                    Console.WriteLine(mSpRegisters[RegisterFile.SpRegister.ptable]);
                     throw new AccessViolationException();
                 }
 

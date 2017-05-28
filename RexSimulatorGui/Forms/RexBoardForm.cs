@@ -319,5 +319,29 @@ namespace RexSimulatorGui.Forms
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
         }
+
+        private void quick_load_Click(object sender, EventArgs e)
+        {
+            // Displays an OpenFileDialog so the user can select a Cursor.  
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "SREC File| *.srec";
+            openFileDialog1.Title = "Select a Srec File";
+
+            // Show the Dialog.  
+            // If the user clicked OK in the dialog and  
+            // a .CUR file was selected, open it.  
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //pause worker
+                this.Invoke(new Action(runButton.PerformClick));
+
+                Stream fstream = openFileDialog1.OpenFile();
+                rexWidget1.LoadSrec(fstream);
+                fstream.Close();
+
+                //resume worker
+                this.Invoke(new Action(runButton.PerformClick));
+            }
+        }
     }
 }

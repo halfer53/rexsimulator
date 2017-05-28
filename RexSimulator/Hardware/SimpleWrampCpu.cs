@@ -229,6 +229,10 @@ namespace RexSimulator.Hardware
             {
                 mInterruptStatus |= (uint)ExceptionSource.ARITH;
             }
+            catch (AccessViolationException)
+            {
+                mInterruptStatus |= (uint)ExceptionSource.GPF;
+            }
         }
 
         /// <summary>

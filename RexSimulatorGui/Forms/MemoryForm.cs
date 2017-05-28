@@ -67,8 +67,9 @@ namespace RexSimulatorGui.Forms
                 string addressStr = address.ToString("X8");
                 string valueStr = value.ToString("X8");
                 string disassembly = mIr.ToString();
+                string ascii = "";
 
-                mVirtualItems[i] = new ListViewItem(new string[] { "", addressStr, valueStr, disassembly });
+                mVirtualItems[i] = new ListViewItem(new string[] { "", addressStr, valueStr, disassembly ,ascii});
             }
             updateTimer.Start();
         }
@@ -161,6 +162,7 @@ namespace RexSimulatorGui.Forms
 
                     mVirtualItems[i].SubItems[2].Text = value.ToString("X8");
                     mVirtualItems[i].SubItems[3].Text = mIr.ToString();
+                    mVirtualItems[i].SubItems[4].Text = value < 128 && value >= 0 ? (checked((char)value)).ToString() : "";
                 }
             }
 
@@ -236,6 +238,27 @@ namespace RexSimulatorGui.Forms
         private void raToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GotoAddress(mRa, "$ra");
+        }
+
+        private void toolStripTextBox_GoToAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                String str = toolStripTextBox_GoToAddress.Text;
+                try
+                {
+                    uint uval = Convert.ToUInt32(str, 16);
+                    int val = checked((int)uval);
+                    memoryListView.Items[val].Selected = true;
+                    memoryListView.Items[val].EnsureVisible();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Plz enter a valid number");
+                }
+                
+            }
         }
 
         private void evecToolStripMenuItem_Click(object sender, EventArgs e)
