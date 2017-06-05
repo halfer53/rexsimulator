@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GaS2bS/0kfPhx7ztEQnRVzrviFV8/9L8QFxGm0Y33lA=</dsig:DigestValue>
+        <dsig:DigestValue>tbN5HnllwEBt/scfrxu84avFEZYWWIl+7+ZXMWVdD84=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulatorGui.exe" size="329696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulatorGui.exe" size="332768">
       <assemblyIdentity name="RexSimulatorGui" version="2.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>u07pUrZ3ZhWEKq2XZmgw/gHzpPL1hiEmm0p5D9lmluo=</dsig:DigestValue>
+        <dsig:DigestValue>sXXwW6AMFegbLxtbi1xRDL3Cg0NHFrb0UyKw4ryWaMQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

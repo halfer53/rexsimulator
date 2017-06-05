@@ -261,6 +261,38 @@ namespace RexSimulatorGui.Forms
             }
         }
 
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    uint val = Convert.ToUInt32(toolStripTextBox1.Text, 16);
+                    for (uint i = 0; i < mDevice.Size; i++)
+                    {
+                        if (mDevice[i + mDevice.BaseAddress] == val)
+                        {
+                            GotoAddress(i + mDevice.BaseAddress, "$evec");
+                            MessageBox.Show((i + mDevice.BaseAddress).ToString());
+                            break;
+                        }
+                    }
+                }
+                    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid number");
+            }
+            
+        }
+
         private void evecToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GotoAddress(mEvec, "$evec");

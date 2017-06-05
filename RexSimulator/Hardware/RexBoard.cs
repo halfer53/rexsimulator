@@ -236,25 +236,27 @@ namespace RexSimulator.Hardware
         /// <returns>True if the CPU completed execution of an instruction.</returns>
         public bool Tick()
         {
-            bool ret = false;
-            mTickCounter++;
+                bool ret = false;
+                mTickCounter++;
 
-            if (CPU.Tick())
-            {
-                RAM.Write();
-                InterruptButton.Write();
-                Serial1.Write();
-                Serial2.Write();
-                Timer.Write();
-                Parallel.Write();
-                ROM.Write();
-                ret = true;
-            }
-            Timer.Tick();
-            Serial1.Tick();
-            Serial2.Tick();
+                if (CPU.Tick())
+                {
+                    RAM.Write();
+                    InterruptButton.Write();
+                    Serial1.Write();
+                    Serial2.Write();
+                    Timer.Write();
+                    Parallel.Write();
+                    ROM.Write();
+                    ret = true;
+                }
+                Timer.Tick();
+                Serial1.Tick();
+                Serial2.Tick();
 
-            return ret;
+                return ret;
+
+            
         }
 
         /// <summary>

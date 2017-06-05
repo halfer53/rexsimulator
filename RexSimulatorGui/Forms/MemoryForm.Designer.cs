@@ -34,6 +34,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.goToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,7 @@
             this.rbaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ptableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox_GoToAddress = new System.Windows.Forms.ToolStripTextBox();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,10 +60,10 @@
             this.columnHeader5});
             this.memoryListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memoryListView.FullRowSelect = true;
-            this.memoryListView.Location = new System.Drawing.Point(0, 0);
+            this.memoryListView.Location = new System.Drawing.Point(0, 31);
             this.memoryListView.Margin = new System.Windows.Forms.Padding(4);
             this.memoryListView.Name = "memoryListView";
-            this.memoryListView.Size = new System.Drawing.Size(729, 629);
+            this.memoryListView.Size = new System.Drawing.Size(729, 598);
             this.memoryListView.TabIndex = 0;
             this.memoryListView.UseCompatibleStateImageBehavior = false;
             this.memoryListView.View = System.Windows.Forms.View.Details;
@@ -90,6 +91,10 @@
             this.columnHeader4.Text = "Disassembly";
             this.columnHeader4.Width = 200;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ASCII";
+            // 
             // updateTimer
             // 
             this.updateTimer.Tick += new System.EventHandler(this.timer1_Tick);
@@ -99,7 +104,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.goToToolStripMenuItem,
-            this.toolStripTextBox_GoToAddress});
+            this.toolStripTextBox_GoToAddress,
+            this.toolStripTextBox1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -178,9 +184,12 @@
             this.toolStripTextBox_GoToAddress.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox_GoToAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox_GoToAddress_KeyPress);
             // 
-            // columnHeader5
+            // toolStripTextBox1
             // 
-            this.columnHeader5.Text = "ASCII";
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // MemoryForm
             // 
@@ -220,5 +229,6 @@
         private System.Windows.Forms.ToolStripMenuItem ptableToolStripMenuItem;
         public System.Windows.Forms.ToolStripTextBox toolStripTextBox_GoToAddress;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }

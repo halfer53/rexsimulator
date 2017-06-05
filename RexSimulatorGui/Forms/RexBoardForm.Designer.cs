@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.load_disk = new System.Windows.Forms.Button();
+            this.quick_load = new System.Windows.Forms.Button();
             this.interruptButtonCheckbox = new System.Windows.Forms.CheckBox();
             this.timerConfigCheckbox = new System.Windows.Forms.CheckBox();
             this.parallelConfigCheckbox = new System.Windows.Forms.CheckBox();
@@ -48,7 +50,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.rexWidget1 = new RexSimulatorGui.Controls.RexWidget();
-            this.quick_load = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -57,6 +58,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.load_disk);
             this.groupBox1.Controls.Add(this.quick_load);
             this.groupBox1.Controls.Add(this.interruptButtonCheckbox);
             this.groupBox1.Controls.Add(this.timerConfigCheckbox);
@@ -68,7 +70,7 @@
             this.groupBox1.Controls.Add(this.gprCheckbox);
             this.groupBox1.Controls.Add(this.serialForm2Checkbox);
             this.groupBox1.Controls.Add(this.serialForm1Checkbox);
-            this.groupBox1.Location = new System.Drawing.Point(13, 673);
+            this.groupBox1.Location = new System.Drawing.Point(13, 662);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -77,10 +79,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Show Forms";
             // 
+            // load_disk
+            // 
+            this.load_disk.Location = new System.Drawing.Point(718, 60);
+            this.load_disk.Margin = new System.Windows.Forms.Padding(4);
+            this.load_disk.Name = "load_disk";
+            this.load_disk.Size = new System.Drawing.Size(128, 28);
+            this.load_disk.TabIndex = 13;
+            this.load_disk.Text = "Mount Disk";
+            this.load_disk.UseVisualStyleBackColor = true;
+            this.load_disk.Click += new System.EventHandler(this.load_disk_Click);
+            // 
+            // quick_load
+            // 
+            this.quick_load.Location = new System.Drawing.Point(718, 18);
+            this.quick_load.Margin = new System.Windows.Forms.Padding(4);
+            this.quick_load.Name = "quick_load";
+            this.quick_load.Size = new System.Drawing.Size(128, 28);
+            this.quick_load.TabIndex = 12;
+            this.quick_load.Text = "Quick Load";
+            this.quick_load.UseVisualStyleBackColor = true;
+            this.quick_load.Click += new System.EventHandler(this.quick_load_Click);
+            // 
             // interruptButtonCheckbox
             // 
             this.interruptButtonCheckbox.AutoSize = true;
-            this.interruptButtonCheckbox.Location = new System.Drawing.Point(503, 53);
+            this.interruptButtonCheckbox.Location = new System.Drawing.Point(8, 112);
             this.interruptButtonCheckbox.Margin = new System.Windows.Forms.Padding(4);
             this.interruptButtonCheckbox.Name = "interruptButtonCheckbox";
             this.interruptButtonCheckbox.Size = new System.Drawing.Size(128, 21);
@@ -92,7 +116,7 @@
             // timerConfigCheckbox
             // 
             this.timerConfigCheckbox.AutoSize = true;
-            this.timerConfigCheckbox.Location = new System.Drawing.Point(707, 110);
+            this.timerConfigCheckbox.Location = new System.Drawing.Point(466, 110);
             this.timerConfigCheckbox.Margin = new System.Windows.Forms.Padding(4);
             this.timerConfigCheckbox.Name = "timerConfigCheckbox";
             this.timerConfigCheckbox.Size = new System.Drawing.Size(130, 21);
@@ -104,7 +128,7 @@
             // parallelConfigCheckbox
             // 
             this.parallelConfigCheckbox.AutoSize = true;
-            this.parallelConfigCheckbox.Location = new System.Drawing.Point(707, 81);
+            this.parallelConfigCheckbox.Location = new System.Drawing.Point(466, 81);
             this.parallelConfigCheckbox.Margin = new System.Windows.Forms.Padding(4);
             this.parallelConfigCheckbox.Name = "parallelConfigCheckbox";
             this.parallelConfigCheckbox.Size = new System.Drawing.Size(171, 21);
@@ -116,7 +140,7 @@
             // serialConfig2Checkbox
             // 
             this.serialConfig2Checkbox.AutoSize = true;
-            this.serialConfig2Checkbox.Location = new System.Drawing.Point(707, 53);
+            this.serialConfig2Checkbox.Location = new System.Drawing.Point(466, 53);
             this.serialConfig2Checkbox.Margin = new System.Windows.Forms.Padding(4);
             this.serialConfig2Checkbox.Name = "serialConfig2Checkbox";
             this.serialConfig2Checkbox.Size = new System.Drawing.Size(172, 21);
@@ -128,7 +152,7 @@
             // serialConfig1Checkbox
             // 
             this.serialConfig1Checkbox.AutoSize = true;
-            this.serialConfig1Checkbox.Location = new System.Drawing.Point(707, 25);
+            this.serialConfig1Checkbox.Location = new System.Drawing.Point(466, 25);
             this.serialConfig1Checkbox.Margin = new System.Windows.Forms.Padding(4);
             this.serialConfig1Checkbox.Name = "serialConfig1Checkbox";
             this.serialConfig1Checkbox.Size = new System.Drawing.Size(172, 21);
@@ -140,7 +164,7 @@
             // memoryCheckbox
             // 
             this.memoryCheckbox.AutoSize = true;
-            this.memoryCheckbox.Location = new System.Drawing.Point(503, 25);
+            this.memoryCheckbox.Location = new System.Drawing.Point(9, 83);
             this.memoryCheckbox.Margin = new System.Windows.Forms.Padding(4);
             this.memoryCheckbox.Name = "memoryCheckbox";
             this.memoryCheckbox.Size = new System.Drawing.Size(124, 21);
@@ -209,7 +233,7 @@
             this.groupBox2.Controls.Add(this.cbFullSpeed);
             this.groupBox2.Controls.Add(this.stepButton);
             this.groupBox2.Controls.Add(this.runButton);
-            this.groupBox2.Location = new System.Drawing.Point(909, 673);
+            this.groupBox2.Location = new System.Drawing.Point(909, 662);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -260,7 +284,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 915);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 838);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.statusStrip1.Size = new System.Drawing.Size(1067, 25);
@@ -276,38 +300,23 @@
             // rexWidget1
             // 
             this.rexWidget1.AllowDrop = true;
-            this.rexWidget1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rexWidget1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rexWidget1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rexWidget1.Location = new System.Drawing.Point(0, 0);
             this.rexWidget1.Margin = new System.Windows.Forms.Padding(5);
             this.rexWidget1.Name = "rexWidget1";
             this.rexWidget1.Size = new System.Drawing.Size(1066, 653);
-            this.rexWidget1.TabIndex = 0;
-            this.rexWidget1.DragDrop += new System.Windows.Forms.DragEventHandler(this.rexWidget1_DragDrop);
-            this.rexWidget1.DragEnter += new System.Windows.Forms.DragEventHandler(this.rexWidget1_DragEnter);
-            // 
-            // quick_load
-            // 
-            this.quick_load.Location = new System.Drawing.Point(9, 96);
-            this.quick_load.Margin = new System.Windows.Forms.Padding(4);
-            this.quick_load.Name = "quick_load";
-            this.quick_load.Size = new System.Drawing.Size(128, 28);
-            this.quick_load.TabIndex = 12;
-            this.quick_load.Text = "Quick Load";
-            this.quick_load.UseVisualStyleBackColor = true;
-            this.quick_load.Click += new System.EventHandler(this.quick_load_Click);
+            this.rexWidget1.TabIndex = 5;
             // 
             // RexBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 940);
+            this.ClientSize = new System.Drawing.Size(1067, 863);
+            this.Controls.Add(this.rexWidget1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rexWidget1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "RexBoardForm";
@@ -327,8 +336,6 @@
         }
 
         #endregion
-
-        private Controls.RexWidget rexWidget1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox serialForm2Checkbox;
         private System.Windows.Forms.CheckBox serialForm1Checkbox;
@@ -348,5 +355,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button quick_load;
+        private System.Windows.Forms.Button load_disk;
+        private Controls.RexWidget rexWidget1;
     }
 }

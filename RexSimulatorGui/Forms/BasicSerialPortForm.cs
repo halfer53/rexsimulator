@@ -32,6 +32,7 @@ namespace RexSimulatorGui.Forms
         private bool mCursorEnabled = true; //TODO: cursor on by default
 
         private string mEscapeSequence = null;
+        private HardDriveController hdisk;
         #endregion
 
         /// <summary>
@@ -54,8 +55,11 @@ namespace RexSimulatorGui.Forms
             serialLabel.DragEnter += new DragEventHandler(serialLabel_DragEnter);
 
             mSerialPort.SerialDataTransmitted += new EventHandler<SerialIO.SerialEventArgs>(mSerialPort_SerialDataTransmitted);
+
             updateTimer.Start();
         }
+
+        
 
         #region Private Methods
         /// <summary>
@@ -177,6 +181,12 @@ namespace RexSimulatorGui.Forms
             }
         }
 
+        public void SetHDisk(Stream stream)
+        {
+            hdisk = new HardDriveController(stream,mSerialPort);
+            mSerialPort.SerialDataTransmitted += new EventHandler<SerialIO.SerialEventArgs>(hdisk.Receiver);
+        }
+
         /// <summary>
         /// Transmit a keypress to the board.
         /// </summary>
@@ -199,6 +209,7 @@ namespace RexSimulatorGui.Forms
             {
                 //mSerialPort.AckRecv();
                 mRecvBuffer.Append((char)e.Data);
+                Console.WriteLine((char)e.Data);
             }
         }
 

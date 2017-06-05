@@ -298,6 +298,13 @@ namespace RexSimulatorGui.Controls
             mActiveControl = GetActiveControl(e.Location);
         }
 
+        public void Reset()
+        {
+            uint switchBk = mBoard.Parallel.Switches;
+            mBoard.Reset();
+            mBoard.Parallel.Switches = switchBk;
+        }
+
         private void RexWidget_Click(object sender, EventArgs e)
         {
             switch (mActiveControl)
