@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulator.dll" size="25600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulator.dll" size="26112">
       <assemblyIdentity name="RexSimulator" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tbN5HnllwEBt/scfrxu84avFEZYWWIl+7+ZXMWVdD84=</dsig:DigestValue>
+        <dsig:DigestValue>QZXNK8ClC44/rh4uVscxKXKRmPWeDeQNkykBsYC3Rys=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sXXwW6AMFegbLxtbi1xRDL3Cg0NHFrb0UyKw4ryWaMQ=</dsig:DigestValue>
+        <dsig:DigestValue>jNe75QbR8qj++Z0UxkkWP8ptzKZCjM5XHAxpjf5CXF4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

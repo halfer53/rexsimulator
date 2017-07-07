@@ -104,6 +104,8 @@ namespace RexSimulator.Hardware
             Reset(false);
         }
 
+        bool run = false;
+
         /// <summary>
         /// Loads an .srec into memory.
         /// Based on description at http://en.wikipedia.org/wiki/SREC_(file_format)
@@ -114,6 +116,9 @@ namespace RexSimulator.Hardware
         {
             StreamReader reader = new StreamReader(stream);
             uint wordsLoaded = 0;
+            string path = @"C:\Users\Bruce\Documents\GitHub\winix2\shell.txt";
+            StreamWriter sw = new StreamWriter(path);
+            
 
             //Note: All hex values are big endian.
 
@@ -195,6 +200,7 @@ namespace RexSimulator.Hardware
 
                 //Put in memory
                 Debug.Assert(data.Length % 4 == 0, "Data should only contain full 32-bit words.");
+                
                 switch (recordType)
                 {
                     case 3: //data intended to be stored in memory.
@@ -207,6 +213,11 @@ namespace RexSimulator.Hardware
                                 val <<= 8;
                                 val |= data[j];
                             }
+                            if (run)
+                            {
+                                sw.WriteLine(val.ToString("X8").ToLower());
+                            }
+                            
                             memContents.Add(val);
                         }
 
@@ -226,7 +237,8 @@ namespace RexSimulator.Hardware
                         break;
                 }
             }
-
+            sw.Close();
+            run = true;
             return wordsLoaded;
         }
 
@@ -236,7 +248,9 @@ namespace RexSimulator.Hardware
         /// <returns>True if the CPU completed execution of an instruction.</returns>
         public bool Tick()
         {
-                bool ret = false;
+            bool ret = false;
+
+                
                 mTickCounter++;
 
                 if (CPU.Tick())
@@ -254,9 +268,9 @@ namespace RexSimulator.Hardware
                 Serial1.Tick();
                 Serial2.Tick();
 
-                return ret;
+                
 
-            
+            return ret;
         }
 
         /// <summary>

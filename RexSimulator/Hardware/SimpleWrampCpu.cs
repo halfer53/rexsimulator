@@ -229,9 +229,12 @@ namespace RexSimulator.Hardware
             {
                 mInterruptStatus |= (uint)ExceptionSource.ARITH;
             }
-            catch (AccessViolationException)
+            catch (AccessViolationException ex)
             {
                 mInterruptStatus |= (uint)ExceptionSource.GPF;
+                Console.WriteLine(mIR);
+                Console.WriteLine(mIR.Instruction);
+                Console.WriteLine(ex.ToString());
             }
         }
 
@@ -240,6 +243,7 @@ namespace RexSimulator.Hardware
         /// </summary>
         private void ProcessExceptions()
         {
+            uint status;
             //Check IRQ lines
             /*
              * IRQ0 -
@@ -278,6 +282,8 @@ namespace RexSimulator.Hardware
                     PC = mSpRegisters[RegisterFile.SpRegister.evec];
 
                     //Copy status
+                    status = mInterruptStatus & mask;
+                    Console.WriteLine(status);
                     mSpRegisters[RegisterFile.SpRegister.estat] = mInterruptStatus & mask;
                 }
                 mInterruptStatus = 0; //finished with this!
@@ -323,29 +329,38 @@ namespace RexSimulator.Hardware
         /// <returns>True if this tick resulted in a completely executed instruction.</returns>
         public bool Tick()
         {
-            mSpRegisters[RegisterFile.SpRegister.ccount]++;
-            if (mTicksToNextInstruction-- <= 0)
+            try
             {
-                mAddressBus.IsWrite = false;
-
-                //Check interrupts
-                ProcessExceptions();
-
-                //Fetch next instruction & increment $PC
-                mMPU.Write(PC++);
-                mIR.Instruction = mDataBus.Value;
-
-                mTicksToNextInstruction = mIR.TicksRequired;
-                if (mIR.OpCode == IR.Opcode.bnez && mGpRegisters[(RegisterFile.GpRegister)mIR.Rs] != 0 ||
-                    mIR.OpCode == IR.Opcode.beqz && mGpRegisters[(RegisterFile.GpRegister)mIR.Rs] == 0)
+                mSpRegisters[RegisterFile.SpRegister.ccount]++;
+                if (mTicksToNextInstruction-- <= 0)
                 {
-                    mTicksToNextInstruction++;
-                }
+                    mAddressBus.IsWrite = false;
 
-                //Decode & Execute
-                ExecuteInstruction();
-                return true;
+                    //Check interrupts
+                    ProcessExceptions();
+
+                    //Fetch next instruction & increment $PC
+                    mMPU.Write(PC++);
+                    mIR.Instruction = mDataBus.Value;
+
+                    mTicksToNextInstruction = mIR.TicksRequired;
+                    if (mIR.OpCode == IR.Opcode.bnez && mGpRegisters[(RegisterFile.GpRegister)mIR.Rs] != 0 ||
+                        mIR.OpCode == IR.Opcode.beqz && mGpRegisters[(RegisterFile.GpRegister)mIR.Rs] == 0)
+                    {
+                        mTicksToNextInstruction++;
+                    }
+
+                    //Decode & Execute
+                    ExecuteInstruction();
+                    return true;
+                }
             }
+            catch (AccessViolationException)
+            {
+                mInterruptStatus |= (uint)ExceptionSource.GPF;
+                ProcessExceptions();
+            }
+            
             return false;
         }
         #endregion

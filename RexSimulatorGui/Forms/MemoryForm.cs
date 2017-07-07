@@ -293,6 +293,14 @@ namespace RexSimulatorGui.Forms
             
         }
 
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for(int i=0; i<mShadow.Length; i++)
+            {
+                Console.WriteLine(mShadow[i]);
+            }
+        }
+
         private void evecToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GotoAddress(mEvec, "$evec");

@@ -60,10 +60,10 @@
             this.columnHeader5});
             this.memoryListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memoryListView.FullRowSelect = true;
-            this.memoryListView.Location = new System.Drawing.Point(0, 31);
+            this.memoryListView.Location = new System.Drawing.Point(0, 0);
             this.memoryListView.Margin = new System.Windows.Forms.Padding(4);
             this.memoryListView.Name = "memoryListView";
-            this.memoryListView.Size = new System.Drawing.Size(729, 598);
+            this.memoryListView.Size = new System.Drawing.Size(729, 629);
             this.memoryListView.TabIndex = 0;
             this.memoryListView.UseCompatibleStateImageBehavior = false;
             this.memoryListView.View = System.Windows.Forms.View.Details;
@@ -131,49 +131,49 @@
             // pcToolStripMenuItem
             // 
             this.pcToolStripMenuItem.Name = "pcToolStripMenuItem";
-            this.pcToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.pcToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.pcToolStripMenuItem.Text = "$pc";
             this.pcToolStripMenuItem.Click += new System.EventHandler(this.pcToolStripMenuItem_Click);
             // 
             // spToolStripMenuItem
             // 
             this.spToolStripMenuItem.Name = "spToolStripMenuItem";
-            this.spToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.spToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.spToolStripMenuItem.Text = "$sp";
             this.spToolStripMenuItem.Click += new System.EventHandler(this.spToolStripMenuItem_Click);
             // 
             // raToolStripMenuItem
             // 
             this.raToolStripMenuItem.Name = "raToolStripMenuItem";
-            this.raToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.raToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.raToolStripMenuItem.Text = "$ra";
             this.raToolStripMenuItem.Click += new System.EventHandler(this.raToolStripMenuItem_Click);
             // 
             // evecToolStripMenuItem
             // 
             this.evecToolStripMenuItem.Name = "evecToolStripMenuItem";
-            this.evecToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.evecToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.evecToolStripMenuItem.Text = "$evec";
             this.evecToolStripMenuItem.Click += new System.EventHandler(this.evecToolStripMenuItem_Click);
             // 
             // earToolStripMenuItem
             // 
             this.earToolStripMenuItem.Name = "earToolStripMenuItem";
-            this.earToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.earToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.earToolStripMenuItem.Text = "$ear";
             this.earToolStripMenuItem.Click += new System.EventHandler(this.earToolStripMenuItem_Click);
             // 
             // rbaseToolStripMenuItem
             // 
             this.rbaseToolStripMenuItem.Name = "rbaseToolStripMenuItem";
-            this.rbaseToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.rbaseToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.rbaseToolStripMenuItem.Text = "$rbase";
             this.rbaseToolStripMenuItem.Click += new System.EventHandler(this.rbaseToolStripMenuItem_Click);
             // 
             // ptableToolStripMenuItem
             // 
             this.ptableToolStripMenuItem.Name = "ptableToolStripMenuItem";
-            this.ptableToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.ptableToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.ptableToolStripMenuItem.Text = "$ptable";
             this.ptableToolStripMenuItem.Click += new System.EventHandler(this.ptableToolStripMenuItem_Click);
             // 
