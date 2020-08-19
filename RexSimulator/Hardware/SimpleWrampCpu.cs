@@ -232,9 +232,9 @@ namespace RexSimulator.Hardware
             catch (AccessViolationException ex)
             {
                 mInterruptStatus |= (uint)ExceptionSource.GPF;
-                Console.WriteLine(mIR);
-                Console.WriteLine(mIR.Instruction);
-                Console.WriteLine(ex.ToString());
+                //Console.WriteLine(mIR);
+                //Console.WriteLine(mIR.Instruction);
+                //Console.WriteLine(ex.ToString());
             }
         }
 
@@ -283,7 +283,7 @@ namespace RexSimulator.Hardware
 
                     //Copy status
                     status = mInterruptStatus & mask;
-                    Console.WriteLine(status);
+                    //Console.WriteLine(status);
                     mSpRegisters[RegisterFile.SpRegister.estat] = mInterruptStatus & mask;
                 }
                 mInterruptStatus = 0; //finished with this!

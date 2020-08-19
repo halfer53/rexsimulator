@@ -209,7 +209,7 @@ namespace RexSimulatorGui.Forms
             {
                 //mSerialPort.AckRecv();
                 mRecvBuffer.Append((char)e.Data);
-                Console.WriteLine((char)e.Data);
+                //Console.WriteLine((char)e.Data);
             }
         }
 
@@ -272,7 +272,7 @@ namespace RexSimulatorGui.Forms
                         }
                         else
                         {
-                            Debug.WriteLine("Unknown Character!");
+                            //Debug.WriteLine("Unknown Character!");
                         }
                         break;
                 }
@@ -280,7 +280,7 @@ namespace RexSimulatorGui.Forms
                 if (mEscapeSequence != null)
                 {
                     //check if the escape sequence is valid
-                    Debug.WriteLine("esc");
+                    //Debug.WriteLine("esc");
                     if (mEscapeSequence == "[2J") //clear screen
                     {
                         ClearScreen();
@@ -301,8 +301,11 @@ namespace RexSimulatorGui.Forms
 
                             mCX = Math.Min(Math.Max(0, x), NUM_COLS);
                             mCY = Math.Min(Math.Max(0, y), NUM_ROWS);
+                            Debug.WriteLine("XY Escape: X: " + x + " Y: " + y);
                         }
-                        catch { }
+                        catch (Exception ex){
+                            Debug.WriteLine(ex.Message + " for " + mEscapeSequence);
+                        }
                         mEscapeSequence = null;
                     }
                     else if (mEscapeSequence == "[?25l") //cursor off

@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RexSimulatorGui.exe.manifest" size="4140">
+    <dependentAssembly dependencyType="install" codebase="RexSimulatorGui.exe.manifest" size="4138">
       <assemblyIdentity name="RexSimulatorGui.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9ax1ZuNmiv4xeAcdTEI7ATFBj/QS1qcHYG37d+sTerQ=</dsig:DigestValue>
+        <dsig:DigestValue>v4OB3D3rQ5sfolHPUFfg2/M3Q0QthuiUK8SuO9y+38Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

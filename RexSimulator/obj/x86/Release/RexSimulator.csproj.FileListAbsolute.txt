@@ -1,0 +1,8 @@
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\bin\Release\RexSimulator.dll
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\bin\Release\RexSimulator.pdb
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\obj\x86\Release\RexSimulator.csprojAssemblyReference.cache
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\obj\x86\Release\RexSimulator.Properties.Resources.resources
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\obj\x86\Release\RexSimulator.csproj.GenerateResource.cache
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\obj\x86\Release\RexSimulator.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\obj\x86\Release\RexSimulator.dll
+C:\Users\Bruce\Documents\GitHub\rexsimulator\RexSimulator\obj\x86\Release\RexSimulator.pdb

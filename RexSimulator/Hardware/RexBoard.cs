@@ -116,10 +116,9 @@ namespace RexSimulator.Hardware
         {
             StreamReader reader = new StreamReader(stream);
             uint wordsLoaded = 0;
-            string path = @"C:\Users\Bruce\Documents\GitHub\winix2\shell.txt";
-            StreamWriter sw = new StreamWriter(path);
+            //string path = @"C:\Users\Bruce\Documents\GitHub\winix2\shell.txt";
+            //StreamWriter sw = new StreamWriter(path);
             
-
             //Note: All hex values are big endian.
 
             //Read records
@@ -213,10 +212,6 @@ namespace RexSimulator.Hardware
                                 val <<= 8;
                                 val |= data[j];
                             }
-                            if (run)
-                            {
-                                sw.WriteLine(val.ToString("X8").ToLower());
-                            }
                             
                             memContents.Add(val);
                         }
@@ -237,7 +232,6 @@ namespace RexSimulator.Hardware
                         break;
                 }
             }
-            sw.Close();
             run = true;
             return wordsLoaded;
         }

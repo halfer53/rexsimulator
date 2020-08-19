@@ -15,14 +15,14 @@
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
           UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
+          If you want to change the Windows User Account Control level replace the
           requestedExecutionLevel node with one of the following.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
+         If you want to utilize File and Registry Virtualization for backward
          compatibility then delete the requestedExecutionLevel node.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulator.dll" size="26112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulator.dll" size="25600">
       <assemblyIdentity name="RexSimulator" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QZXNK8ClC44/rh4uVscxKXKRmPWeDeQNkykBsYC3Rys=</dsig:DigestValue>
+        <dsig:DigestValue>g6Y3Ssbn91LxY/nSqTjEgTSix2E+XUvhNh81lqNaDOg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulatorGui.exe" size="332768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RexSimulatorGui.exe" size="331264">
       <assemblyIdentity name="RexSimulatorGui" version="2.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jNe75QbR8qj++Z0UxkkWP8ptzKZCjM5XHAxpjf5CXF4=</dsig:DigestValue>
+        <dsig:DigestValue>VfgYLmn+diT4VgqlayaYaPpizoUUEzm+pvEcekg2WPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
